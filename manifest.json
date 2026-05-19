@@ -1,0 +1,79 @@
+{
+  "manifest_version": 3,
+  "name": "FitMon",
+  "version": "0.1.0",
+  "description": "FitMon helps you manage browser-based fatigue with timely stretch prompts, recovery tracking, and character growth.",
+  "minimum_chrome_version": "116",
+  "permissions": [
+    "identity",
+    "notifications",
+    "storage",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "https://fitmon.ycc.club/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; img-src 'self' https://fitmon.ycc.club data:;"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/fitmons/basic/*.png"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "action": {
+    "default_title": "Open FitMon",
+    "default_icon": {
+      "16": "assets/icon-16.png",
+      "32": "assets/icon-32.png",
+      "48": "assets/icon-48.png",
+      "128": "assets/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "assets/icon-16.png",
+    "32": "assets/icon-32.png",
+    "48": "assets/icon-48.png",
+    "128": "assets/icon-128.png"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "exclude_matches": [
+        "https://*.kbstar.com/*",
+        "https://*.shinhan.com/*",
+        "https://*.wooribank.com/*",
+        "https://*.hanafn.com/*",
+        "https://*.nhbank.com/*",
+        "https://*.gov.kr/*",
+        "https://*.hometax.go.kr/*",
+        "https://*.nts.go.kr/*",
+        "https://login.microsoftonline.com/*",
+        "https://appleid.apple.com/*",
+        "https://*.paypal.com/*",
+        "https://checkout.stripe.com/*",
+        "https://*.checkout.com/*",
+        "https://nid.naver.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
