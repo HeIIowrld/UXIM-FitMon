@@ -25,3 +25,4 @@ FitMon helps browser users manage fatigue with timely stretch prompts, quick on-
 Reload the extension from `chrome://extensions` after changing `manifest.json`, `service-worker.js`, `content.js`, or side panel files.
 
 The extension stores local state under `fitmonState` and automatically migrates data from earlier builds.
+Ayo~ Woogi in the town Yh~
